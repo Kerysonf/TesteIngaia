@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Music.Core, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Music.Core.1.0.4\lib\net46\Music.Core.dll</HintPath>
@@ -161,11 +164,14 @@
     <Compile Include="BLL\MusicasBLL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusicasController.cs" />
+    <Compile Include="DAL\MasterDAL.cs" />
+    <Compile Include="DAL\MusicasDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CondicoesModel.cs" />
     <Compile Include="Models\CoordenadasModel.cs" />
+    <Compile Include="Models\EstatisticasModel.cs" />
     <Compile Include="Models\NuvemModel.cs" />
     <Compile Include="Models\Retorno.cs" />
     <Compile Include="Models\SysModel.cs" />

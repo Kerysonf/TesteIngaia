@@ -189,3 +189,5 @@ D:\TesteIngaia\TesteIngaia\obj\Debug\TesteIngaia.csproj.CoreCompileInputs.cache
 D:\TesteIngaia\TesteIngaia\obj\Debug\TesteIngaia.csproj.CopyComplete
 D:\TesteIngaia\TesteIngaia\obj\Debug\TesteIngaia.dll
 D:\TesteIngaia\TesteIngaia\obj\Debug\TesteIngaia.pdb
+D:\TesteIngaia\TesteIngaia\bin\Dapper.dll
+D:\TesteIngaia\TesteIngaia\bin\Dapper.xml

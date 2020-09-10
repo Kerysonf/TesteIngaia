@@ -11,8 +11,8 @@ namespace TesteIngaia.Controllers
 {
     public class MusicasController : ApiController
     {
-        [Route("GetMusicasByTemperatura"),HttpGet]
-        public Retorno<List<string>> GetMusicasByTemperatura(string Cidade) 
+        [Route("GetMusicasByTemperatura"), HttpGet]
+        public Retorno<List<string>> GetMusicasByTemperatura(string Cidade)
         {
             var retorno = new Retorno<List<string>>();
             var musicaBLL = new MusicasBLL();
@@ -29,7 +29,26 @@ namespace TesteIngaia.Controllers
                     retorno.Success = false;
                 }
             }
-            catch ( Exception ex)
+            catch (Exception ex)
+            {
+                retorno.Success = false;
+                retorno.ObjectReturn = null;
+                retorno.Message = ex.Message;
+                retorno.Exception = ex;
+            }
+            return retorno;
+        }
+        [Route("GetEstatisticas"), HttpGet]
+        public Retorno<List<EstatisticasModel>> GetEstatisticas()
+        {
+            var retorno = new Retorno<List<EstatisticasModel>>();
+            var musicaBLL = new MusicasBLL();
+            try
+            {
+                retorno.ObjectReturn = musicaBLL.GetEstatisticas();
+                retorno.Success = true;
+            }
+            catch (Exception ex)
             {
                 retorno.Success = false;
                 retorno.ObjectReturn = null;

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using TesteIngaia.DAL;
 using TesteIngaia.Models;
 
 namespace TesteIngaia.BLL
@@ -15,7 +16,48 @@ namespace TesteIngaia.BLL
         {
             var temp = GetTemp(cidade);
             var lstMusicas = GetMusicas(temp);
+            SaveEstatisticas(cidade.ToLower());
             return lstMusicas;
+        }
+        public List<EstatisticasModel> GetEstatisticas() 
+        {
+            var lstEstatisticas = new MusicasDAL().GetEstatisticas();
+            return lstEstatisticas;
+        }
+        private void SaveEstatisticas(string cidade) 
+        {
+            var musicaDAL = new MusicasDAL();
+            var estatistica = new EstatisticasModel
+            {
+                Cidade = cidade,
+                QntConsultas = GetQntdConsultas(cidade)
+            };
+            if (EstatisticaExiste(cidade))
+            {
+                musicaDAL.UpdateLogEstatisticas(estatistica);
+            }
+            else
+            {
+                musicaDAL.SaveLogEstatisticas(estatistica);
+            }
+        }
+        private bool EstatisticaExiste(string cidade) 
+        {
+            var valid = new MusicasDAL().GetEstatisticasByCidade(cidade);
+            if (!String.IsNullOrEmpty(valid)) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private int GetQntdConsultas(string cidade) 
+        {
+            var consultas = new MusicasDAL().GetQntdConsultas(cidade);
+            consultas = consultas + 1;
+            return consultas;
         }
         private List<string> GetMusicas(decimal temp) 
         {
