@@ -14,7 +14,7 @@ namespace TesteIngaia.DAL
         }
         private string GetConnection() 
         {
-            return @"Server=localhost\SQLEXPRESS;Database=Cadastros;Trusted_Connection=True;";
+            return @"Server=testeingaia.database.windows.net;Database=Cadastros;User Id=keryson;password=teste@0309";
         }
     }
 }
