@@ -14,7 +14,7 @@ namespace TesteIngaia.DAL
         }
         private string GetConnection() 
         {
-            return @"MYSQLCONNSTR_localdb;";
+            return @"Server=localhost\SQLEXPRESS;Database=Cadastros;Trusted_Connection=True;";
         }
     }
 }

@@ -16,7 +16,7 @@ namespace TesteIngaia.BLL
         {
             var temp = GetTemp(cidade);
             var lstMusicas = GetMusicas(temp);
-            SaveEstatisticas(cidade.ToLower());
+            //SaveEstatisticas(cidade.ToLower());
             return lstMusicas;
         }
         public List<EstatisticasModel> GetEstatisticas() 
