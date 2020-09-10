@@ -11,6 +11,7 @@ namespace TesteIngaia.Controllers
 {
     public class MusicasController : ApiController
     {
+        [Route("GetMusicasByTemperatura"),HttpGet]
         public Retorno<List<string>> GetMusicasByTemperatura(string Cidade) 
         {
             var retorno = new Retorno<List<string>>();
