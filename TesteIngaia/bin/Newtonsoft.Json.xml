@@ -14,7 +14,9 @@
             Gets or sets the value of the Oid.
             </summary>
             <value>The value of the Oid.</value>
+            
         </member>
+        
         <member name="M:Newtonsoft.Json.Bson.BsonObjectId.#ctor(System.Byte[])">
             <summary>
             Initializes a new instance of the <see cref="T:Newtonsoft.Json.Bson.BsonObjectId"/> class.
